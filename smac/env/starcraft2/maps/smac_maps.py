@@ -217,7 +217,7 @@ map_param_registry = {
         "n_enemies": 6,
         "limit": 180,
         "a_race": "P",
-        "b_race": "T,
+        "b_race": "T",
         "unit_type_bits": 0,
         "map_type": "sentry",
     },
