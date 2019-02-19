@@ -212,6 +212,15 @@ map_param_registry = {
         "unit_type_bits": 0,
         "map_type": "colossus",
     },
+    "HallucinIce": {
+        "n_agents": 4,
+        "n_enemies": 6,
+        "limit": 180,
+        "a_race": "P",
+        "b_race": "T,
+        "unit_type_bits": 0,
+        "map_type": "sentry",
+    },
 }
 
 

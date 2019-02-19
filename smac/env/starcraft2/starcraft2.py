@@ -46,7 +46,22 @@ actions = {
     "move": 16,  # target: PointOrUnit
     "attack": 23,  # target: PointOrUnit
     "stop": 4,  # target: None
-    "heal": 386,  # Unit
+    "heal": 386,# Unit
+    "guardian_shield": 76, #SpecialUnit
+    "forcefield": 1526, #SpecialUnit
+    "Halladept" : 2391, #SpecialUnit
+    "Hallarchon" : 146, #SpecialUnit
+    "Hallcolossus" : 148, #SpecialUnit
+    "Halldisruptor" : 2389, #SpecialUnit
+    "HallhighTemplar" : 150, #SpecialUnit
+    "HallhighInmortal" : 152, #SpecialUnit
+    "HallhighOracle" : 2114, #SpecialUnit
+    "HallhighPhoenix" : 154, #SpecialUnit
+    "HallhighProbe" : 156, #SpecialUnit
+    "HallhighStalker" : 158, #SpecialUnit
+    "HallhighVoidray" : 160, #SpecialUnit
+    "HallhighWarpprism" : 162, #SpecialUnit
+    "HallhighZealot" : 164, #SpecialUnit     
 }
 
 
@@ -251,9 +266,9 @@ class StarCraft2Env(MultiAgentEnv):
         self.previous_enemy_units = None
         self.last_action = np.zeros((self.n_agents, self.n_actions))
         self._min_unit_type = 0
-        self.marine_id = self.marauder_id = self.medivac_id = 0
+        self.marine_id = self.hellion_id = self.reaper_id = self.marauder_id = self.medivac_id = 0
         self.hydralisk_id = self.zergling_id = self.baneling_id = 0
-        self.stalker_id = self.colossus_id = self.zealot_id = 0
+        self.stalker_id = self.sentry_id = self.colossus_id = self.zealot_id = 0
         self.max_distance_x = 0
         self.max_distance_y = 0
         self.map_x = 0
@@ -1232,6 +1247,8 @@ class StarCraft2Env(MultiAgentEnv):
             self.hydralisk_id = min_unit_type
         elif self.map_type == "stalkers":
             self.stalker_id = min_unit_type
+        elif self.map_type == "sentry":
+            self.sentry_id = min_unit_type            
         elif self.map_type == "colossus":
             self.colossus_id = min_unit_type
         elif self.map_type == "bane":
