@@ -517,6 +517,17 @@ class StarCraft2Env(MultiAgentEnv):
                 queue_command=False)
             if self.debug:
                 logging.debug("Agent {}: Move West".format(a_id))
+                
+       elif action == 6:
+            # make guardian shield
+            cmd = r_pb.ActionRawUnitCommand(
+                ability_id=actions["guardian_shield"],
+                unit_tags=[tag],
+                queue_command=False)
+            if self.debug:
+                logging.debug("Agent {}: Make force-field".format(a_id))
+                
+                
         else:
             # attack/heal units that are in range
             target_id = action - self.n_actions_no_attack
